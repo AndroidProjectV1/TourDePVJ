@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#EEEEEE"
+    tools:context="com.example.reza.tourdepvjmine.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:id="@+id/collapsing_toolbar"
+            android:layout_height="match_parent"
+            android:background="@drawable/bdg"
+
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleGravity="center_horizontal"
+            app:expandedTitleMarginTop="200dp"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="@string/app_name">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbarId"
+                app:layout_collapseMode="pin"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:elevation="0dp"
+                android:background="#FFFFFF"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:elevation="0dp"
+                    android:id="@+id/card_alam_click"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:elevation="10dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/palm"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:text="Wisata Alam"/>
+
+                        <View
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#616161" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:elevation="0dp"
+                    android:id="@+id/card_kuliner_click"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:elevation="10dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/food"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:text="Wisata Kuliner"/>
+
+                        <View
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#616161" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:elevation="0dp"
+                    android:id="@+id/card_kolam_click"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:elevation="10dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/pool"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:text="Kolam Renang"/>
+
+                        <View
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#616161" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:elevation="0dp"
+                    android:id="@+id/card_taman_click"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:elevation="10dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/park"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:text="Wisata Taman"/>
+
+                        <View
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#616161" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:elevation="0dp"
+                    android:id="@+id/card_seni_click"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:elevation="10dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/senbud"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:text="Seni dan Budaya"/>
+
+                        <View
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#616161" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_marginRight="5dp"
+                    android:background="#FFFFFF"
+                    android:layout_weight="1"
+                    android:id="@+id/card_sejarah_click"
+                    android:elevation="0dp"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:background="#FFFFFF"
+                        android:elevation="10dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/history"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:textSize="15sp"
+                            android:text="Sejarah"/>
+
+                        <View
+                            android:layout_margin="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#616161" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
