@@ -95,10 +95,12 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
                 tempatWisata.setLatitude(cursor.getDouble(8));
                 tempatWisata.setLongitude(cursor.getDouble(9));
                 tempatWisata.setJarak(hitungJarakKeLokasi(tempatWisata.getLatitude(), tempatWisata.getLongitude()));
-                tempatWisata.setFoto(cursor.getInt(11));
+                tempatWisata.setFoto(cursor.getString(11));
                 tempatWisata.setKategori(cursor.getInt(12));
                 arrayTempatWisata[cc] = tempatWisata;
             }
+
+            //Toast.makeText(ListWisataActivity.this, arrayTempatWisata[0].getFoto(), Toast.LENGTH_LONG).show();
 
             context = this;
 

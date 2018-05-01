@@ -40,7 +40,7 @@ public class DataHelper extends SQLiteOpenHelper {
             db.execSQL(CREATE_TABLE_LOKASI);
             db.execSQL(CREATE_TABLE_FEEDBACK);
 
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban1', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban1', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','alam.png',"+WISATA_ALAM+");");
             db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban2', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
             db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban3', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
             db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban4', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");

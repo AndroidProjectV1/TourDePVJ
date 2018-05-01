@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class DetailWisata extends AppCompatActivity {
 
@@ -40,7 +39,6 @@ public class DetailWisata extends AppCompatActivity {
 
         Intent intent = getIntent();
         String namaWisata = intent.getStringExtra("namawisata");
-        Toast.makeText(getApplicationContext(), namaWisata,Toast.LENGTH_LONG).show();
 
         SQLiteDatabase db = dbcenter.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM wisata where nama_wisata = '"+namaWisata+"'", null);
@@ -53,7 +51,7 @@ public class DetailWisata extends AppCompatActivity {
             tempatWisata.setAlamat(cursor.getString(10).toString());
             tempatWisata.setLatitude(cursor.getDouble(8));
             tempatWisata.setLongitude(cursor.getDouble(9));
-            tempatWisata.setFoto(cursor.getInt(11));
+            //tempatWisata.setFoto(cursor.getInt(11));
             tempatWisata.setKategori(cursor.getInt(12));
         }
 
