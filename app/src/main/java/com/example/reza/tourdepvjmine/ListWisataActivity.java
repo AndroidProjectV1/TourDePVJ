@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -72,8 +73,9 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
     public void onConnected(Bundle bundle) {
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
+
         Intent intent = getIntent();
-        int kategori = intent.getIntExtra("kategori", 0);
+        final int kategori = intent.getIntExtra("kategori", 0);
         if(mLastLocation != null){
             SQLiteDatabase db = dbcenter.getReadableDatabase();
             if (kategori != 0){
@@ -105,12 +107,13 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
             ListView01.setSelected(true);
             ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-                public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
+                public void onItemClick(AdapterView arg0, View view, int position, long arg3) {
                     Intent i = new Intent(ListWisataActivity.this, DetailWisata.class);
+                    String namaWisata = ((TextView)view.findViewById(R.id.nama_tempat_wisata)).getText().toString();
+                    i.putExtra("namawisata", namaWisata);
                     startActivity(i);
                 }
             });
-            //Toast.makeText(this,Stri, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this,"null", Toast.LENGTH_LONG).show();
         }
