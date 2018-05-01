@@ -72,14 +72,19 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
     public void onConnected(Bundle bundle) {
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
+        Intent intent = getIntent();
+        int kategori = intent.getIntExtra("kategori", 0);
         if(mLastLocation != null){
             SQLiteDatabase db = dbcenter.getReadableDatabase();
-            cursor = db.rawQuery("SELECT * FROM wisata", null);
+            if (kategori != 0){
+                cursor = db.rawQuery("SELECT * FROM wisata where kategori_wisata = "+kategori+"", null);
+            } else {
+                cursor = db.rawQuery("SELECT * FROM wisata", null);
+            }
             arrayTempatWisata = new TempatWisata[cursor.getCount()];
             arrayJarakKeLokasi = new float[cursor.getCount()];
             cursor.moveToFirst();
-            Integer id = R.drawable.kawahputih;
-            String idS = String.valueOf(R.drawable.kawahputih);
+
             for (int cc = 0; cc < cursor.getCount(); cc++) {
                 cursor.moveToPosition(cc);
                 tempatWisata = new TempatWisata();
@@ -89,6 +94,7 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
                 tempatWisata.setLongitude(cursor.getDouble(9));
                 tempatWisata.setJarak(hitungJarakKeLokasi(tempatWisata.getLatitude(), tempatWisata.getLongitude()));
                 tempatWisata.setFoto(cursor.getInt(11));
+                tempatWisata.setKategori(cursor.getInt(12));
                 arrayTempatWisata[cc] = tempatWisata;
             }
 
@@ -104,7 +110,7 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
                     startActivity(i);
                 }
             });
-            Toast.makeText(this,idS, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,Stri, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this,"null", Toast.LENGTH_LONG).show();
         }

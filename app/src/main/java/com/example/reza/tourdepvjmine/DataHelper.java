@@ -13,6 +13,12 @@ public class DataHelper extends SQLiteOpenHelper {
 
         private static final String DATABASE_NAME = "tempatwisata.db";
         private static final int DATABASE_VERSION = 1;
+        private static final int WISATA_ALAM = 1;
+        private static final int WISATA_KULINER = 2;
+        private static final int WISATA_KOLAM_RENANG = 3;
+        private static final int WISATA_TAMAN = 4;
+        private static final int WISATA_SENI_BUDAYA = 5;
+        private static final int WISATA_SEJARAH = 6;
         public DataHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             // TODO Auto-generated constructor stub
@@ -24,19 +30,20 @@ public class DataHelper extends SQLiteOpenHelper {
             String CREATE_TABLE_WISATA = "CREATE TABLE wisata(id_wisata integer primary key autoincrement, " +
                     "nama_wisata text null, jam_buka integer null, jam_tutup integer null, deskripsi_wisata text null, " +
                     "fasilitas text null, harga_masuk integer null, kontak_pengelola text null, lat real null, long real null, " +
-                    "alamat text null, foto Integer null);";
-            String CREATE_TABLE_LOKASI = "CREATE TABLE lokasi(id integer primary key autoincrement, " +
-                    "nama text null, lat real null, long real null, alamat text null, foto Integer null);";
-            String CREATE_TABLE_FEEDBACK = "CREATE TABLE feedback(kode integer primary key autoincrement, " +
-                    "nama text null, lat real null, long real null, alamat text null, foto Integer null);";
+                    "alamat text null, foto Integer null, kategori_wisata integer null);";
+            String CREATE_TABLE_LOKASI = "CREATE TABLE lokasi(id_lokasi integer primary key autoincrement, " +
+                    "nama_lokasi text null, latitude real null, longitude real null);";
+            String CREATE_TABLE_FEEDBACK = "CREATE TABLE feedback(kode_feedback integer primary key autoincrement, " +
+                    "ulasan_feedback text null, nama_pemberi_feedback text null);";
             Log.d("Data", "onCreate: " + CREATE_TABLE_WISATA);
             db.execSQL(CREATE_TABLE_WISATA);
             db.execSQL(CREATE_TABLE_LOKASI);
             db.execSQL(CREATE_TABLE_FEEDBACK);
 
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto) VALUES ('Tangkuban Perahu', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312');");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto) VALUES ('Lembang', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312');");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto) VALUES ('Cibulan', '-6.767213', '107.622624','Kuningan,Kabupaten Bandung Barat','2131165312');");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Perahu', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Pesawat', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Mobil', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_KULINER+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Motor', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_KOLAM_RENANG+");");
 
         }
 

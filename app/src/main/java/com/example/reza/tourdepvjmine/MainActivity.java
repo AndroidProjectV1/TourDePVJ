@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
+                i.putExtra("kategori", 1);
                 startActivity(i);
             }
         });
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
+                i.putExtra("kategori", 2);
                 startActivity(i);
             }
         });
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
+                i.putExtra("kategori", 3);
                 startActivity(i);
             }
         });
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
+                i.putExtra("kategori", 4);
                 startActivity(i);
             }
         });
@@ -67,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
+                i.putExtra("kategori", 5);
                 startActivity(i);
             }
         });
@@ -75,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
+                i.putExtra("kategori", 6);
                 startActivity(i);
             }
         });
