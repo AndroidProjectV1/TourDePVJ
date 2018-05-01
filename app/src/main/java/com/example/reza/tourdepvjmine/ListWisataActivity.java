@@ -14,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.reza.tourdepvjmine.admin.DataHelper;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -30,11 +29,14 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
     TempatWisata[] arrayTempatWisata;
     TempatWisata tempatWisata;
 
+    private Double currentLat;
+    private Double currentLong;
+
     ListView ListView01;
     Menu menu;
     Context context;
     protected Cursor cursor;
-    com.example.reza.tourdepvjmine.admin.DataHelper dbcenter;
+    DataHelper dbcenter;
     public static ListWisataActivity ma;
 
     @Override
@@ -76,14 +78,17 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
             arrayTempatWisata = new TempatWisata[cursor.getCount()];
             arrayJarakKeLokasi = new float[cursor.getCount()];
             cursor.moveToFirst();
+            Integer id = R.drawable.kawahputih;
+            String idS = String.valueOf(R.drawable.kawahputih);
             for (int cc = 0; cc < cursor.getCount(); cc++) {
                 cursor.moveToPosition(cc);
                 tempatWisata = new TempatWisata();
                 tempatWisata.setNamaTempat(cursor.getString(1).toString());
-                tempatWisata.setAlamat(cursor.getString(4).toString());
-                tempatWisata.setLatitude(cursor.getDouble(2));
-                tempatWisata.setLongitude(cursor.getDouble(3));
+                tempatWisata.setAlamat(cursor.getString(10).toString());
+                tempatWisata.setLatitude(cursor.getDouble(8));
+                tempatWisata.setLongitude(cursor.getDouble(9));
                 tempatWisata.setJarak(hitungJarakKeLokasi(tempatWisata.getLatitude(), tempatWisata.getLongitude()));
+                tempatWisata.setFoto(cursor.getInt(11));
                 arrayTempatWisata[cc] = tempatWisata;
             }
 
@@ -99,6 +104,7 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
                     startActivity(i);
                 }
             });
+            Toast.makeText(this,idS, Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(this,"null", Toast.LENGTH_LONG).show();
         }
@@ -110,6 +116,9 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
             Location loc1 = new Location("");
             loc1.setLatitude(mLastLocation.getLatitude());
             loc1.setLongitude(mLastLocation.getLongitude());
+
+            setCurrentLat(loc1.getLatitude());
+            setCurrentLong(loc1.getLongitude());
 
             Location loc2 = new Location("");
             loc2.setLatitude(lati);
@@ -143,5 +152,21 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
 
+    }
+
+    public Double getCurrentLat() {
+        return currentLat;
+    }
+
+    public void setCurrentLat(Double currentLat) {
+        this.currentLat = currentLat;
+    }
+
+    public Double getCurrentLong() {
+        return currentLong;
+    }
+
+    public void setCurrentLong(Double currentLong) {
+        this.currentLong = currentLong;
     }
 }

@@ -6,6 +6,7 @@ public class TempatWisata {
     private double latitude;
     private double longitude;
     private  Float jarak;
+    private Integer foto;
 
     public String getNamaTempat() {
         return namaTempat;
@@ -45,5 +46,13 @@ public class TempatWisata {
 
     public void setJarak(Float jarak) {
         this.jarak = jarak;
+    }
+
+    public Integer getFoto() {
+        return foto;
+    }
+
+    public void setFoto(Integer foto) {
+        this.foto = foto;
     }
 }

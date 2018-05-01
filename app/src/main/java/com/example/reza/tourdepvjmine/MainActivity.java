@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.language :
-                Intent i = new Intent(MainActivity.this, com.example.reza.tourdepvjmine.admin.MainActivity.class);
-                startActivity(i);
+                //Intent i = new Intent(MainActivity.this, com.example.reza.tourdepvjmine.admin.MainActivity.class);
+                //startActivity(i);
                 return true;
             case R.id.about :
 
