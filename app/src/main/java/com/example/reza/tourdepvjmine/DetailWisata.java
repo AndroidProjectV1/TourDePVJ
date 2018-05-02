@@ -1,8 +1,10 @@
 package com.example.reza.tourdepvjmine;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailWisata extends AppCompatActivity {
+    Resources resources;
     ImageView image;
+    ImageView background;
     DataHelper dbcenter;
     protected Cursor cursor;
     TempatWisata tempatWisata;
@@ -58,7 +62,6 @@ public class DetailWisata extends AppCompatActivity {
 
         textAlamat = (TextView) findViewById(R.id.alamat_tempat_wisata_detail);
         textAlamat.setText(tempatWisata.getAlamat());
-
         image = (ImageView) findViewById(R.id.maps);
         image.setClickable(true);
         image.setOnClickListener(new View.OnClickListener() {
@@ -70,8 +73,12 @@ public class DetailWisata extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        resources = getResources();
+        int resID = resources.getIdentifier(tempatWisata.getFoto(), "drawable","com.example.reza.tourdepvjmine");
+        Drawable drawable = resources.getDrawable(resID);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_detail);
         collapsingToolbarLayout.setTitle(tempatWisata.getNamaTempat());
-
+        collapsingToolbarLayout.setBackground(drawable);
     }
 }

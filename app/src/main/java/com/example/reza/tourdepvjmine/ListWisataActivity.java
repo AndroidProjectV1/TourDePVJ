@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -33,6 +34,7 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
     private Double currentLat;
     private Double currentLong;
 
+    Toolbar tolbar;
     ListView ListView01;
     Menu menu;
     Context context;
@@ -48,6 +50,15 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
         setupGoogleAPI();
         setupDialog();
 
+        /*tolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(tolbar);
+        tolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+        tolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                finish();
+            }
+        });*/
         ma = this;
         dbcenter = new DataHelper(this);
     }
