@@ -9,27 +9,36 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:scaleType="centerCrop" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="nama wisata"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:id="@+id/nama_tempat_wisata"/>
+        android:id="@+id/nama_tempat_wisata"
+        android:padding="3dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:id="@+id/alamat_tempat_wisata"
-        android:text="alamat"/>
+        android:text="alamat"
+        android:padding="3dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15sp"
         android:id="@+id/jarak_tempat_wisata"
-        android:text="jarak"/>
+        android:text="jarak"
+        android:padding="3dp"/>
+    </LinearLayout>
 
 </LinearLayout>
