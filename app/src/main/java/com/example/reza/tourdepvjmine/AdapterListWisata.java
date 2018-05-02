@@ -57,6 +57,7 @@ public class AdapterListWisata extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         Holder holder = new Holder();
         NumberFormat nm1 = new DecimalFormat("#0.00");
+        resources = parent.getResources();
 
         View rowView;
             rowView = inflater.inflate(R.layout.list_wisata_layout, null);
@@ -68,12 +69,9 @@ public class AdapterListWisata extends BaseAdapter{
             holder.textNama.setText(tempatWisata[position].getNamaTempat());
             holder.textAlamat.setText(tempatWisata[position].getAlamat());
             holder.textJarak.setText(nm1.format(tempatWisata[position].getJarak())+" KiloMeter");
-            /*String alam = "bandung";
-            resources = convertView.getResources();
-            int resID = resources.getIdentifier(alam, "drawable","com.example.reza.tourdepvjmine");
+            int resID = resources.getIdentifier(tempatWisata[position].getFoto(), "drawable","com.example.reza.tourdepvjmine");
             Drawable drawable = resources.getDrawable(resID);
             holder.imageViewList.setImageDrawable(drawable);
-            */holder.imageViewList.setImageResource(R.drawable.alam);
         return rowView;
     }
 }

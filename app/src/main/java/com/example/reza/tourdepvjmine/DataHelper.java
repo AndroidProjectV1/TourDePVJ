@@ -40,13 +40,14 @@ public class DataHelper extends SQLiteOpenHelper {
             db.execSQL(CREATE_TABLE_LOKASI);
             db.execSQL(CREATE_TABLE_FEEDBACK);
 
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban1', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','alam.png',"+WISATA_ALAM+");");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban2', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban3', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban4', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Pesawat', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_ALAM+");");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Mobil', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_KULINER+");");
-            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Motor', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','2131165312',"+WISATA_KOLAM_RENANG+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban1', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','alam',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Kawah Merah', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','alam',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban2', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','bandung',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban3', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','bdg',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban4', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','bandung',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Pesawat', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','bandung',"+WISATA_ALAM+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Mobil', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','bandung',"+WISATA_KULINER+");");
+            db.execSQL("INSERT INTO wisata (nama_wisata, lat, long, alamat, foto, kategori_wisata) VALUES ('Tangkuban Motor', '-6.767213', '107.622624','Lembang,Kabupaten Bandung Barat','bandung',"+WISATA_KOLAM_RENANG+");");
 
         }
 

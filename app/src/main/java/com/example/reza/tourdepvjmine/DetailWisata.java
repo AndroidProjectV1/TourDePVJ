@@ -52,7 +52,7 @@ public class DetailWisata extends AppCompatActivity {
             tempatWisata.setAlamat(cursor.getString(10).toString());
             tempatWisata.setLatitude(cursor.getDouble(8));
             tempatWisata.setLongitude(cursor.getDouble(9));
-            //tempatWisata.setFoto(cursor.getInt(11));
+            tempatWisata.setFoto(cursor.getString(11));
             tempatWisata.setKategori(cursor.getInt(12));
         }
 
