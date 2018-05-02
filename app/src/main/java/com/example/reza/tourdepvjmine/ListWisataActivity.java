@@ -9,6 +9,7 @@ import android.location.Location;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -47,20 +48,25 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_wisata);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         setupGoogleAPI();
         setupDialog();
 
-        /*tolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(tolbar);
-        tolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-        tolbar.setNavigationOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                finish();
-            }
-        });*/
         ma = this;
         dbcenter = new DataHelper(this);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if(id == android.R.id.home){
+            this.finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void setupDialog(){
@@ -110,8 +116,6 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
                 tempatWisata.setKategori(cursor.getInt(12));
                 arrayTempatWisata[cc] = tempatWisata;
             }
-
-            //Toast.makeText(ListWisataActivity.this, arrayTempatWisata[0].getFoto(), Toast.LENGTH_LONG).show();
 
             context = this;
 
