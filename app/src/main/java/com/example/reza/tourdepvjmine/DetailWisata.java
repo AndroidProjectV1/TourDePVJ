@@ -8,10 +8,11 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailWisata extends AppCompatActivity {
-
+    ImageView image;
     DataHelper dbcenter;
     protected Cursor cursor;
     TempatWisata tempatWisata;
@@ -58,6 +59,17 @@ public class DetailWisata extends AppCompatActivity {
         textAlamat = (TextView) findViewById(R.id.alamat_tempat_wisata_detail);
         textAlamat.setText(tempatWisata.getAlamat());
 
+        image = (ImageView) findViewById(R.id.maps);
+        image.setClickable(true);
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DetailWisata.this,MapsActivity.class);
+                i.putExtra("latitude",tempatWisata.getLatitude());
+                i.putExtra("longitude",tempatWisata.getLongitude());
+                startActivity(i);
+            }
+        });
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_detail);
         collapsingToolbarLayout.setTitle(tempatWisata.getNamaTempat());
 
