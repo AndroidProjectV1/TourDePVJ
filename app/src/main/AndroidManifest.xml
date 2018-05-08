@@ -23,7 +23,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,7 @@
             android:name=".DetailWisata"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ListWisataActivity"
+            android:name=".activity.ListWisataActivity"
             android:theme="@style/ListTheme" />
         <activity
             android:name=".admin.MainActivity"
@@ -44,7 +44,7 @@
             android:name=".admin.BuatWisata"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".MapsActivity"
+            android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
     </application>
 

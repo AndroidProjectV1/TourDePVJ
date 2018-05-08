@@ -1,4 +1,4 @@
-package com.example.reza.tourdepvjmine;
+package com.example.reza.tourdepvjmine.activity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -17,6 +17,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
+import com.example.reza.tourdepvjmine.db.DataHelper;
+import com.example.reza.tourdepvjmine.DetailWisata;
+import com.example.reza.tourdepvjmine.R;
+import com.example.reza.tourdepvjmine.model.TempatWisata;
+import com.example.reza.tourdepvjmine.adapter.AdapterListWisata;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;

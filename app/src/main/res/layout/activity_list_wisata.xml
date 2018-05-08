@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="10dp"
-    tools:context=".ListWisataActivity">
+    tools:context=".activity.ListWisataActivity">
 
     <ListView
         android:id="@+id/listView1"

@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#EEEEEE"
-    tools:context="com.example.reza.tourdepvjmine.MainActivity">
+    tools:context="com.example.reza.tourdepvjmine.activity.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.reza.tourdepvjmine;
+package com.example.reza.tourdepvjmine.model;
 
 public class TempatWisata {
     private String namaTempat;

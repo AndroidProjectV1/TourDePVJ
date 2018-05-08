@@ -13,6 +13,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.reza.tourdepvjmine.activity.MapsActivity;
+import com.example.reza.tourdepvjmine.db.DataHelper;
+import com.example.reza.tourdepvjmine.model.TempatWisata;
+
 public class DetailWisata extends AppCompatActivity {
     Resources resources;
     ImageView image;
