@@ -18,7 +18,7 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.example.reza.tourdepvjmine.db.DataHelper;
-import com.example.reza.tourdepvjmine.DetailWisata;
+import com.example.reza.tourdepvjmine.DetailWisataActivity;
 import com.example.reza.tourdepvjmine.R;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
 import com.example.reza.tourdepvjmine.adapter.AdapterListWisata;
@@ -130,7 +130,7 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
             ListView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
                 public void onItemClick(AdapterView arg0, View view, int position, long arg3) {
-                    Intent i = new Intent(ListWisataActivity.this, DetailWisata.class);
+                    Intent i = new Intent(ListWisataActivity.this, DetailWisataActivity.class);
                     String namaWisata = ((TextView)view.findViewById(R.id.nama_tempat_wisata)).getText().toString();
                     i.putExtra("namawisata", namaWisata);
                     startActivity(i);
