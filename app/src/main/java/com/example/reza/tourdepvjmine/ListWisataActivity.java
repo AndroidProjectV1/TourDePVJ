@@ -150,7 +150,6 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
             loc2.setLatitude(lati);
             loc2.setLongitude(longi);
 
-            //distanceInMeters = (int) Math.round(loc1.distanceTo(loc2));
             distanceInMeters = loc1.distanceTo(loc2);
         } else {
             Toast.makeText(this,"method distanceTo Gagal", Toast.LENGTH_SHORT).show();
