@@ -1,6 +1,8 @@
 package com.example.reza.tourdepvjmine.model;
 
-public class TempatWisata {
+import android.support.annotation.NonNull;
+
+public class TempatWisata implements Comparable {
     private String namaTempat;
     private String Alamat;
     private double latitude;
@@ -63,5 +65,11 @@ public class TempatWisata {
 
     public void setKategori(int kategori) {
         this.kategori = kategori;
+    }
+
+    @Override
+    public int compareTo(@NonNull Object o) {
+        Float compareJarak = ((TempatWisata) o).getJarak();
+        return (int) (compareJarak - this.jarak);
     }
 }

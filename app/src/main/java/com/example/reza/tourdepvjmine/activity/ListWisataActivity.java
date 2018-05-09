@@ -26,6 +26,10 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.places.Places;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class ListWisataActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private Location mLastLocation;
@@ -39,9 +43,8 @@ public class ListWisataActivity extends AppCompatActivity implements GoogleApiCl
     private Double currentLat;
     private Double currentLong;
 
-    Toolbar tolbar;
     ListView ListView01;
-    Menu menu;
+
     Context context;
     protected Cursor cursor;
     DataHelper dbcenter;
