@@ -18,7 +18,6 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 import com.example.reza.tourdepvjmine.db.DataHelper;
-import com.example.reza.tourdepvjmine.DetailWisataActivity;
 import com.example.reza.tourdepvjmine.R;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
 import com.example.reza.tourdepvjmine.adapter.AdapterListWisata;

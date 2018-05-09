@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DetailWisataActivity"
+            android:name=".activity.DetailWisataActivity"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activity.ListWisataActivity"

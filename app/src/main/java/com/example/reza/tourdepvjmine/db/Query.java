@@ -10,7 +10,7 @@ public class Query {
     private static final int WISATA_SEJARAH = 6;
 
     public static final String CREATE_TABLE_WISATA = "CREATE TABLE wisata(id_wisata integer primary key autoincrement, " +
-            "nama_wisata text null, jam_buka integer null, jam_tutup integer null, deskripsi_wisata text null, " +
+            "nama_wisata text null, jam_buka text null, jam_tutup text null, deskripsi_wisata text null, " +
             "fasilitas text null, harga_masuk integer null, kontak_pengelola text null, lat real null, long real null, " +
             "alamat text null, foto Integer null, kategori_wisata integer null, id_lokasi integer null);";
     public static final String CREATE_TABLE_LOKASI = "CREATE TABLE lokasi(id_lokasi integer primary key, " +
