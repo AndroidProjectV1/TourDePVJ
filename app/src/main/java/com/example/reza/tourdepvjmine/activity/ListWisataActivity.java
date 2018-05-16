@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.reza.tourdepvjmine.R;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
@@ -16,6 +17,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class ListWisataActivity extends AppCompatActivity {
@@ -24,6 +27,7 @@ public class ListWisataActivity extends AppCompatActivity {
     private com.google.firebase.database.Query query;
     private ArrayList<TempatWisata> arrayTempatWisata;
     private ListView listWisata;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,9 @@ public class ListWisataActivity extends AppCompatActivity {
 
             public void onItemClick(AdapterView arg0, View view, int position, long arg3) {
                 Intent i = new Intent(ListWisataActivity.this, DetailWisataActivity.class);
+                textView = (TextView)findViewById(R.id.nama_tempat_wisata);
+                String namaTempat = textView.getText().toString();
+                i.putExtra("namaTempat", namaTempat);
                 startActivity(i);
             }
         });
