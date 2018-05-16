@@ -68,13 +68,13 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:k="10dp"
+                        android:layout_margin="10dp"
                         android:orientation="vertical"
                         android:background="#FFFFFF"
                         android:elevation="10dp"
                         android:layout_height="match_parent">
 
-                        <ImageView
+                    <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
                             android:src="@drawable/palm"

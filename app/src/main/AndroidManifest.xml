@@ -38,12 +38,6 @@
             android:name=".activity.ListWisataActivity"
             android:theme="@style/ListTheme" />
         <activity
-            android:name=".admin.MainActivity"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".admin.BuatWisata"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps"></activity>
     </application>

@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", 1);
+                i.putExtra("kategori", "alam");
                 startActivity(i);
             }
         });
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", 2);
+                i.putExtra("kategori", "kuliner");
                 startActivity(i);
             }
         });
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", 3);
+                i.putExtra("kategori", "kolam");
                 startActivity(i);
             }
         });
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", 4);
+                i.putExtra("kategori", "taman");
                 startActivity(i);
             }
         });
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", 5);
+                i.putExtra("kategori", "seni");
                 startActivity(i);
             }
         });
@@ -82,13 +82,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", 6);
+                i.putExtra("kategori", "sejarah");
                 startActivity(i);
             }
         });
-
-
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);

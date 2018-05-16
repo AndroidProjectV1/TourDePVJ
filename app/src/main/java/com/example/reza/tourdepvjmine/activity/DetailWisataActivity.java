@@ -3,7 +3,7 @@ package com.example.reza.tourdepvjmine.activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -14,14 +14,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.reza.tourdepvjmine.R;
-import com.example.reza.tourdepvjmine.db.DataHelper;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
 
 public class DetailWisataActivity extends AppCompatActivity {
     Resources resources;
     ImageView image;
     ImageView background;
-    DataHelper dbcenter;
+
     protected Cursor cursor;
     TempatWisata tempatWisata;
     TextView textAlamat;
@@ -32,8 +31,7 @@ public class DetailWisataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_wisata);
 
-        dbcenter = new DataHelper(this);
-
+/*
         Toolbar toolbarDetail = (Toolbar) findViewById(R.id.toolbarIdDetail);
         setSupportActionBar(toolbarDetail);
 
@@ -49,23 +47,7 @@ public class DetailWisataActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String namaWisata = intent.getStringExtra("namawisata");
 
-        SQLiteDatabase db = dbcenter.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * FROM wisata where nama_wisata = '"+namaWisata+"'", null);
-        cursor.moveToFirst();
-
-        for (int cc = 0; cc < cursor.getCount(); cc++) {
-            cursor.moveToPosition(cc);
-            tempatWisata = new TempatWisata();
-            tempatWisata.setNamaTempat(cursor.getString(1).toString());
-            tempatWisata.setAlamat(cursor.getString(10).toString());
-            tempatWisata.setLatitude(cursor.getDouble(8));
-            tempatWisata.setLongitude(cursor.getDouble(9));
-            tempatWisata.setFoto(cursor.getString(11));
-            tempatWisata.setKategori(cursor.getInt(12));
-        }
-
         textAlamat = (TextView) findViewById(R.id.alamat_tempat_wisata_detail);
-        textAlamat.setText(tempatWisata.getAlamat());
         image = (ImageView) findViewById(R.id.maps);
         image.setClickable(true);
         image.setOnClickListener(new View.OnClickListener() {
@@ -79,10 +61,9 @@ public class DetailWisataActivity extends AppCompatActivity {
         });
 
         resources = getResources();
-        int resID = resources.getIdentifier(tempatWisata.getFoto(), "drawable","com.example.reza.tourdepvjmine");
-        Drawable drawable = resources.getDrawable(resID);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_detail);
         collapsingToolbarLayout.setTitle(tempatWisata.getNamaTempat());
-        collapsingToolbarLayout.setBackground(drawable);
+        collapsingToolbarLayout.setBackgroundColor(Color.BLACK);
+*/
     }
 }
