@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,11 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailWisataActivity extends AppCompatActivity {
     Resources resources;
     ImageView image;
-    ImageView background;
 
-    protected Cursor cursor;
-    TempatWisata tempatWisata;
-    TextView textAlamat;
+    private TempatWisata tempatWisata;
     CollapsingToolbarLayout collapsingToolbarLayout;
     private DatabaseReference reference;
 
@@ -66,8 +64,6 @@ public class DetailWisataActivity extends AppCompatActivity {
 
         ambilData();
 
-//        textAlamat = (TextView) findViewById(R.id.alamat_tempat_wisata_detail);
-
         image = (ImageView) findViewById(R.id.maps);
         image.setClickable(true);
         image.setOnClickListener(new View.OnClickListener() {
@@ -96,9 +92,8 @@ public class DetailWisataActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.d("message", "Gagal Mengambil Data" + databaseError);
             }
         });
     }
-
 }
