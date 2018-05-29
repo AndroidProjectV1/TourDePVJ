@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.reza.tourdepvjmine.R;
 import com.example.reza.tourdepvjmine.adapter.AdapterListWisata;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
@@ -26,7 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DetailWisataActivity extends AppCompatActivity {
     Resources resources;
-    ImageView image;
+    ImageView image, collapsingImage;
+    TextView alamatTempat;
 
     private TempatWisata tempatWisata;
     CollapsingToolbarLayout collapsingToolbarLayout;
@@ -64,14 +66,17 @@ public class DetailWisataActivity extends AppCompatActivity {
 
         ambilData();
 
+        collapsingImage = (ImageView) findViewById(R.id.collapsing_image);
+        alamatTempat = (TextView)findViewById(R.id.alamat_tempat_wisata_detail);
+
         image = (ImageView) findViewById(R.id.maps);
         image.setClickable(true);
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DetailWisataActivity.this,MapsActivity.class);
-                //i.putExtra("latitude",tempatWisata.getLatitude());
-                //i.putExtra("longitude",tempatWisata.getLongitude());
+                i.putExtra("latitude",tempatWisata.getLatitude());
+                i.putExtra("longitude",tempatWisata.getLongitude());
                 startActivity(i);
             }
         });
@@ -88,6 +93,8 @@ public class DetailWisataActivity extends AppCompatActivity {
                     tempatWisata = dataWisata.getValue(TempatWisata.class);
                 }
                 collapsingToolbarLayout.setTitle(tempatWisata.getNamaTempat());
+                alamatTempat.setText(tempatWisata.getAlamat());
+                Glide.with(DetailWisataActivity.this).load(tempatWisata.getFoto()).into(collapsingImage);
             }
 
             @Override
