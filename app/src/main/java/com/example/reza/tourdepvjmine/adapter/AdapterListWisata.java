@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.reza.tourdepvjmine.activity.ListWisataActivity;
 import com.example.reza.tourdepvjmine.R;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
@@ -68,10 +69,8 @@ public class AdapterListWisata extends BaseAdapter {
 
             holder.textNama.setText(tempatWisata.get(position).getNamaTempat());
             holder.textAlamat.setText(tempatWisata.get(position).getAlamat());
-            holder.jarak.setText(tempatWisata.get(position).getFoto());
-            resID = resources.getIdentifier(tempatWisata.get(position).getFoto(), "drawable","com.example.reza.tourdepvjmine");
-            drawable = resources.getDrawable(resID);
-            holder.imageView.setImageDrawable(drawable);
+            //holder.jarak.setText(tempatWisata.get(position).getFoto());
+            Glide.with(context).load(tempatWisata.get(position).getFoto()).into(holder.imageView);
         return rowView;
     }
 }

@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:id="@+id/collapsing_toolbar_detail"
             android:layout_height="match_parent"
-            android:background="@drawable/kawahputih"
+            android:background="@drawable/ic_launcher_background"
 
             app:contentScrim="@color/colorPrimary"
             app:expandedTitleGravity="center_horizontal"
