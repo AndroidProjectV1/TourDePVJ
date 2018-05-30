@@ -1,7 +1,13 @@
 package com.example.reza.tourdepvjmine.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,12 +36,19 @@ public class ListWisataActivity extends AppCompatActivity {
 
     private ProgressDialog progressDialog;
 
+    static final int REQUEST_LOCATION = 1;
+    LocationManager locationManager;
+
+    private double latitude;
+    private double longitude;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_wisata);
-//
-//        final TextView textView = (TextView)findViewById(R.id.nama_tempat_wisata);
+
+        locationManager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+        getLocation();
 
         Intent intent = getIntent();
         String kategori = intent.getStringExtra("kategori");
@@ -83,6 +96,7 @@ public class ListWisataActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataWisata: dataSnapshot.getChildren()){
                     TempatWisata tempatWisata = dataWisata.getValue(TempatWisata.class);
+                    tempatWisata.setJarak(hitungJarak(tempatWisata.getLatitude(), tempatWisata.getLongitude()));
                     arrayTempatWisata.add(tempatWisata);
                 }
                 listWisata.setAdapter(new AdapterListWisata(ListWisataActivity.this, arrayTempatWisata));
@@ -95,4 +109,45 @@ public class ListWisataActivity extends AppCompatActivity {
             }
         });
     }
+
+    public float hitungJarak(double latitudeTujuan, double longitudeTujuan){
+        Location lokasiAwal = new Location("current");
+        lokasiAwal.setLatitude(latitude);
+        lokasiAwal.setLongitude(longitude);
+
+        Location lokasiTujuan = new Location("tujuan");
+        lokasiTujuan.setLatitude(latitudeTujuan);
+        lokasiTujuan.setLongitude(longitudeTujuan);
+        return lokasiAwal.distanceTo(lokasiTujuan)/1000;
+    }
+
+    public void getLocation(){
+        if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
+                PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        } else {
+            Location location =locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if(location != null){
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
+                } else {
+//                ((EditText)findViewById(R.id.lati)).setText("gagal");
+//                ((EditText)findViewById(R.id.longi)).setText("gagal");
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permission, @NonNull int[] grantResult){
+        super.onRequestPermissionsResult(requestCode, permission, grantResult);
+
+        switch (requestCode){
+            case REQUEST_LOCATION:
+                getLocation();
+                break;
+        }
+    }
+
 }

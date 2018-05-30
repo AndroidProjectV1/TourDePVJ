@@ -16,6 +16,7 @@ import com.example.reza.tourdepvjmine.activity.ListWisataActivity;
 import com.example.reza.tourdepvjmine.R;
 import com.example.reza.tourdepvjmine.model.TempatWisata;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class AdapterListWisata extends BaseAdapter {
@@ -69,7 +70,7 @@ public class AdapterListWisata extends BaseAdapter {
 
             holder.textNama.setText(tempatWisata.get(position).getNamaTempat());
             holder.textAlamat.setText(tempatWisata.get(position).getAlamat());
-            //holder.jarak.setText(tempatWisata.get(position).getFoto());
+            holder.jarak.setText(new DecimalFormat("##.##").format(tempatWisata.get(position).getJarak())+ " Kilometer");
             Glide.with(context).load(tempatWisata.get(position).getFoto()).into(holder.imageView);
         return rowView;
     }

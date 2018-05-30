@@ -2,16 +2,20 @@ package com.example.reza.tourdepvjmine.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reza.tourdepvjmine.R;
@@ -19,11 +23,6 @@ import com.example.reza.tourdepvjmine.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    LocationManager lm;
-    Location location;
-
-    private double latitude;
-    private double longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle("Tour DePVJ");
-
-//        lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-//        location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-//        latitude = location.getLatitude();
-//        longitude = location.getLongitude();
-//        Toast.makeText(MainActivity.this, (int) latitude, Toast.LENGTH_LONG).show();
 
         CardView cardAlamClick = (CardView) findViewById(R.id.card_alam_click);
         CardView cardKulinerClick = (CardView) findViewById(R.id.card_kuliner_click);
@@ -115,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.language :
-
 
                 return true;
             case R.id.about :

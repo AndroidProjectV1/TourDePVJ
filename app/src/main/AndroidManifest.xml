@@ -41,8 +41,8 @@
             android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".activity.testImageFirebase"
-            android:theme="@style/ListTheme"/>
+            android:name=".activity.testLocation"
+            android:theme="@style/ListTheme" />
     </application>
 
 </manifest>
