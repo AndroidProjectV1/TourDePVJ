@@ -82,8 +82,10 @@ public class ListWisataActivity extends AppCompatActivity {
 
             public void onItemClick(AdapterView arg0, View view, int position, long arg3) {
                 String namaTempat = ((TextView)view.findViewById(R.id.nama_tempat_wisata)).getText().toString();
+                String jarak = ((TextView)view.findViewById(R.id.jarak_tempat_wisata)).getText().toString();
                 Intent i = new Intent(ListWisataActivity.this, DetailWisataActivity.class);
                 i.putExtra("namaTempat", namaTempat);
+                i.putExtra("jarak", jarak);
                 startActivity(i);
             }
         });
