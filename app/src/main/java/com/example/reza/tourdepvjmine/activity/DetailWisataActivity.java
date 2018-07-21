@@ -25,6 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class DetailWisataActivity extends AppCompatActivity {
     Resources resources;
     ImageView image, collapsingImage;
@@ -67,6 +69,7 @@ public class DetailWisataActivity extends AppCompatActivity {
         collapsingImage = (ImageView) findViewById(R.id.collapsing_image);
         alamatTempat = (TextView)findViewById(R.id.alamat_tempat_wisata_detail);
         deskripsiTempat = (TextView)findViewById(R.id.deskripsi);
+        kontakPengelola = (TextView)findViewById(R.id.kontak_pengelola);
 
         ambilData();
 
@@ -89,6 +92,11 @@ public class DetailWisataActivity extends AppCompatActivity {
     public void setData(TempatWisata tempatWisata){
         alamatTempat.setText(tempatWisata.getAlamat());
         deskripsiTempat.setText(tempatWisata.getDeskripsi());
+        if(tempatWisata.getKontakPengelola().equals("-")){
+            kontakPengelola.setText("Tidak Tersedia");
+        } else {
+            kontakPengelola.setText(tempatWisata.getKontakPengelola());
+        }
     }
 
     public void ambilData(){
