@@ -19,4 +19,12 @@
         app:showAsAction="never">
     </item>
 
+    <item
+        android:id="@+id/action_search"
+        android:title="search"
+        android:orderInCategory="100"
+        android:icon="@drawable/search"
+        app:showAsAction="ifRoom"
+        />
+
 </menu>
