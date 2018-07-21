@@ -93,7 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         Double lat = currentloc.getDoubleExtra("latitude",0.00);
         Double lng = currentloc.getDoubleExtra("longitude",0.00);
-        // Add a marker in Sydney and move the camera
+        // Add a marker
 
         mMap.setMyLocationEnabled(true);
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);

@@ -145,8 +145,7 @@ public class ListWisataActivity extends AppCompatActivity {
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
                 } else {
-//                ((EditText)findViewById(R.id.lati)).setText("gagal");
-//                ((EditText)findViewById(R.id.longi)).setText("gagal");
+
             }
         }
     }
