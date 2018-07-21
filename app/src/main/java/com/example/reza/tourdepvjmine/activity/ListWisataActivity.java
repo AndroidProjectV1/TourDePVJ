@@ -37,7 +37,7 @@ public class ListWisataActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
     static final int REQUEST_LOCATION = 1;
-    LocationManager locationManager;
+    private LocationManager locationManager;
 
     private double latitude;
     private double longitude;

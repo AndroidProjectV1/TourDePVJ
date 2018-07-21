@@ -20,10 +20,11 @@
     </item>
 
     <item
-        android:id="@+id/action_search"
+        android:id="@+id/menu_search"
         android:title="search"
         android:orderInCategory="100"
         android:icon="@drawable/search"
+        app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom"
         />
 
