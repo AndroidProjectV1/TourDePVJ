@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
+                //passing kata kunci yang diketikkan user di searchview
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "");
                 i.putExtra("cari", s);

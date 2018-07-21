@@ -81,12 +81,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        /*TextView textView;
-        Intent intent = getIntent();
-        String jarakkm = intent.getStringExtra("jarak");
-        Integer jarak = Integer.parseInt(jarakkm);
-        Integer estimation_time = jarak/100;*/
-
 
         mMap = googleMap;
         Intent currentloc = getIntent();
@@ -109,8 +103,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String latitudedes = Double.toString(lat);
         String longitudedes = Double.toString(lng);
         mMap.addMarker(new MarkerOptions().position(destination).title("Marker in Madrid"));
-
-
 
         //Define list to get all latlng for the route
         List<LatLng> path = new ArrayList();

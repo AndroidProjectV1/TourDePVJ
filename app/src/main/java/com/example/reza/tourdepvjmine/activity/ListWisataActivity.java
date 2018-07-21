@@ -57,7 +57,6 @@ public class ListWisataActivity extends AppCompatActivity {
         //pengecekan nilai yang di passing dari main activity untuk keperluan search
         if(!kategori.equals("")){
             String actionKategori = kategori.substring(0,1).toUpperCase() + kategori.substring(1);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Wisata "+actionKategori);
         } else {
@@ -136,7 +135,7 @@ public class ListWisataActivity extends AppCompatActivity {
         return lokasiAwal.distanceTo(lokasiTujuan)/1000;
     }
 
-    //method untuk mengambil
+    //method untuk mengambil lokasi dari user yang bersangkutan
     public void getLocation(){
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
