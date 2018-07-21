@@ -27,6 +27,11 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
+/**
+ *
+ * @author Reza Dwi Kurniawan & Maulana Ibrahim
+ */
+
 public class DetailWisataActivity extends AppCompatActivity {
     Resources resources;
     ImageView image, collapsingImage;

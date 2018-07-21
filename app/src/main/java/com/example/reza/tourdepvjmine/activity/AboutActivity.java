@@ -11,6 +11,12 @@ import android.view.View;
 import com.example.reza.tourdepvjmine.R;
 
 /**
+ *
+ * @author Reza Dwi Kurniawan
+ */
+
+
+/**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */

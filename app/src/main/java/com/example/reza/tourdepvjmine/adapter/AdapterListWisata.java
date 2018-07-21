@@ -19,6 +19,11 @@ import com.example.reza.tourdepvjmine.model.TempatWisata;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Reza Dwi Kurniawan
+ */
+
 public class AdapterListWisata extends BaseAdapter {
 
     private ArrayList<TempatWisata> tempatWisata;

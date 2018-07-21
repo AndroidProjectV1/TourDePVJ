@@ -1,5 +1,9 @@
 package com.example.reza.tourdepvjmine.model;
 
+/**
+ *
+ * @author Reza Dwi Kurniawan
+ */
 
 public class TempatWisata {
     private String namaTempat;

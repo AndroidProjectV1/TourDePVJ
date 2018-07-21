@@ -27,6 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Reza Dwi Kurniawan
+ */
+
+
 public class ListWisataActivity extends AppCompatActivity {
 
     private DatabaseReference reference;

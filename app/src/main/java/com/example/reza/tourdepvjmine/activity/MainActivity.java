@@ -28,6 +28,10 @@ import android.widget.Toast;
 
 import com.example.reza.tourdepvjmine.R;
 
+/**
+ *
+ * @author Said Al-Fakhri
+ */
 
 public class MainActivity extends AppCompatActivity {
 
