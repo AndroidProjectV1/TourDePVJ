@@ -103,7 +103,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kawah putih adalah sebuah danau yang terbentuk akibat dari letusan gunung patuha "
+                    android:id="@+id/deskripsi"
+                    android:text="Belum ada deskripsi"
                     android:textColor="@color/black"
                     android:padding="5dp"
                     android:layout_marginBottom="5dp"
@@ -137,6 +138,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/kontak_pengelola"
                         android:text="+6283824062289"
                         android:layout_marginTop="15dp"
                         android:textSize="15dp"

@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailWisataActivity extends AppCompatActivity {
     Resources resources;
     ImageView image, collapsingImage;
-    TextView alamatTempat;
+    TextView alamatTempat, deskripsiTempat, kontakPengelola, jamOperasional, hargaTiket, fasilitas;
 
     private TempatWisata tempatWisata;
     CollapsingToolbarLayout collapsingToolbarLayout;
@@ -64,10 +64,11 @@ public class DetailWisataActivity extends AppCompatActivity {
         // filter untuk value tertentu yang akan diambil
         query = reference.orderByChild("namaTempat").equalTo(namaTempat);
 
-        ambilData();
-
         collapsingImage = (ImageView) findViewById(R.id.collapsing_image);
         alamatTempat = (TextView)findViewById(R.id.alamat_tempat_wisata_detail);
+        deskripsiTempat = (TextView)findViewById(R.id.deskripsi);
+
+        ambilData();
 
         image = (ImageView) findViewById(R.id.maps);
         image.setClickable(true);
@@ -85,6 +86,11 @@ public class DetailWisataActivity extends AppCompatActivity {
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_detail);
     }
 
+    public void setData(TempatWisata tempatWisata){
+        alamatTempat.setText(tempatWisata.getAlamat());
+        deskripsiTempat.setText(tempatWisata.getDeskripsi());
+    }
+
     public void ambilData(){
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -93,7 +99,7 @@ public class DetailWisataActivity extends AppCompatActivity {
                     tempatWisata = dataWisata.getValue(TempatWisata.class);
                 }
                 collapsingToolbarLayout.setTitle(tempatWisata.getNamaTempat());
-                alamatTempat.setText(tempatWisata.getAlamat());
+                setData(tempatWisata);
                 Glide.with(DetailWisataActivity.this).load(tempatWisata.getFoto()).into(collapsingImage);
             }
 

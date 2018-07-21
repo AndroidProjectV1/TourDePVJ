@@ -5,6 +5,8 @@ public class TempatWisata {
     private String namaTempat;
     private String alamat;
     private String kategori;
+    private String deskripsi;
+    private String kontakPengelola;
     private double latitude;
     private double longitude;
     private String foto;
@@ -64,5 +66,21 @@ public class TempatWisata {
 
     public void setJarak(float jarak) {
         this.jarak = jarak;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
+    }
+
+    public String getKontakPengelola() {
+        return kontakPengelola;
+    }
+
+    public void setKontakPengelola(String kontakPengelola) {
+        this.kontakPengelola = kontakPengelola;
     }
 }
