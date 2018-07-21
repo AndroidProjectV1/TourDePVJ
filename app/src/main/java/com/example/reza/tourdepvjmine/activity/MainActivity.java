@@ -107,14 +107,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.language :
-
-                return true;
             case R.id.about :
-
+                Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(i);
                 return true;
             case R.id.exit :
-
+                    System.exit(0);
                 return true;
         }
         return super.onOptionsItemSelected(item);
