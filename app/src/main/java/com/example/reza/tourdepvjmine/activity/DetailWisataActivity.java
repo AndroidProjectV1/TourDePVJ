@@ -50,7 +50,6 @@ public class DetailWisataActivity extends AppCompatActivity {
         setSupportActionBar(toolbarDetail);
 
         toolbarDetail.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
-
         toolbarDetail.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,10 +57,12 @@ public class DetailWisataActivity extends AppCompatActivity {
             }
         });
 
+        //mengambil passing parameter dari Activity list
         Intent intent = getIntent();
         namaTempat = intent.getStringExtra("namaTempat");
         jarak = intent.getStringExtra("jarak");
 
+        //set refference untuk database firebase
         reference = FirebaseDatabase.getInstance().getReference("tempat-wisata");
 
         // filter untuk value tertentu yang akan diambil
@@ -72,6 +73,9 @@ public class DetailWisataActivity extends AppCompatActivity {
         deskripsiTempat = (TextView)findViewById(R.id.deskripsi);
         kontakPengelola = (TextView)findViewById(R.id.kontak_pengelola);
 
+        //reference.child("rating").setValue(4);
+
+        //memanggil method untuk mengambil data di firebase
         ambilData();
 
         image = (ImageView) findViewById(R.id.maps);
@@ -91,6 +95,7 @@ public class DetailWisataActivity extends AppCompatActivity {
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_detail);
     }
 
+    //method untuk set data yang di ambil dari firebase ke activity detail
     public void setData(TempatWisata tempatWisata){
         alamatTempat.setText(tempatWisata.getAlamat());
         deskripsiTempat.setText(tempatWisata.getDeskripsi());
@@ -101,6 +106,7 @@ public class DetailWisataActivity extends AppCompatActivity {
         }
     }
 
+    //method untuk mengambil data dari firebase
     public void ambilData(){
         query.addValueEventListener(new ValueEventListener() {
             @Override

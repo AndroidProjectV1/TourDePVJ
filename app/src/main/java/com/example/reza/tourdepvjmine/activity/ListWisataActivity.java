@@ -54,6 +54,7 @@ public class ListWisataActivity extends AppCompatActivity {
         String kategori = intent.getStringExtra("kategori");
         String cari = intent.getStringExtra("cari");
 
+        //pengecekan nilai yang di passing dari main activity untuk keperluan search
         if(!kategori.equals("")){
             String actionKategori = kategori.substring(0,1).toUpperCase() + kategori.substring(1);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -82,9 +83,9 @@ public class ListWisataActivity extends AppCompatActivity {
         }
 
         arrayTempatWisata = new ArrayList<>();
-
         listWisata = (ListView) findViewById(R.id.listView1);
 
+        //pemanggilan method untuk mengambil data dari firebase
         ambilData();
 
         listWisata.setSelected(true);
@@ -102,6 +103,7 @@ public class ListWisataActivity extends AppCompatActivity {
 
     }
 
+    //method untuk mengambil data dari firebase
     public void ambilData(){
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -122,6 +124,7 @@ public class ListWisataActivity extends AppCompatActivity {
         });
     }
 
+    //method menghitung jarak antara current location user dan tempat wisata yang bersangkutan
     public float hitungJarak(double latitudeTujuan, double longitudeTujuan){
         Location lokasiAwal = new Location("current");
         lokasiAwal.setLatitude(latitude);
@@ -133,6 +136,7 @@ public class ListWisataActivity extends AppCompatActivity {
         return lokasiAwal.distanceTo(lokasiTujuan)/1000;
     }
 
+    //method untuk mengambil
     public void getLocation(){
         if(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
