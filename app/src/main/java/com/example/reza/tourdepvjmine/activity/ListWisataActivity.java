@@ -52,12 +52,18 @@ public class ListWisataActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String kategori = intent.getStringExtra("kategori");
+        String cari = intent.getStringExtra("cari");
 
-        String actionKategori = kategori.substring(0,1).toUpperCase() + kategori.substring(1);
-
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Wisata "+actionKategori);
+        if(!kategori.equals("")){
+            String actionKategori = kategori.substring(0,1).toUpperCase() + kategori.substring(1);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("Wisata "+actionKategori);
+        } else {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setTitle("Wisata");
+        }
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Mohon Bersabar...");
@@ -69,7 +75,11 @@ public class ListWisataActivity extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference("tempat-wisata");
 
         // filter untuk value tertentu yang akan diambil
-        query = reference.orderByChild("kategori").equalTo(kategori.toString());
+        if (cari.equals("")){
+            query = reference.orderByChild("kategori").equalTo(kategori.toString());
+        } else {
+            query = reference.orderByChild("namaTempat").equalTo(cari.toString());
+        }
 
         arrayTempatWisata = new ArrayList<>();
 

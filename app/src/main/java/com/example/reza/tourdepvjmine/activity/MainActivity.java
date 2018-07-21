@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "alam");
+                i.putExtra("cari", "");
                 startActivity(i);
             }
         });
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "kuliner");
+                i.putExtra("cari", "");
                 startActivity(i);
             }
         });
@@ -75,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "kolam");
+                i.putExtra("cari", "");
                 startActivity(i);
             }
         });
@@ -84,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "taman");
+                i.putExtra("cari", "");
                 startActivity(i);
             }
         });
@@ -93,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "seni");
+                i.putExtra("cari", "");
                 startActivity(i);
             }
         });
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
                 i.putExtra("kategori", "sejarah");
+                i.putExtra("cari", "");
                 startActivity(i);
             }
         });
@@ -118,7 +124,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 Intent i = new Intent(MainActivity.this, ListWisataActivity.class);
-                i.putExtra("kategori", s);
+                i.putExtra("kategori", "");
+                i.putExtra("cari", s);
                 startActivity(i);
                 return false;
             }
