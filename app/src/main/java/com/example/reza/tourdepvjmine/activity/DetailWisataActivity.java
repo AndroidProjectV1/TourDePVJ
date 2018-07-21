@@ -36,7 +36,7 @@ public class DetailWisataActivity extends AppCompatActivity {
     CollapsingToolbarLayout collapsingToolbarLayout;
     private DatabaseReference reference;
 
-    private String namaTempat;
+    private String namaTempat, jarak;
     private Query query;
 
     @Override
@@ -60,6 +60,7 @@ public class DetailWisataActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         namaTempat = intent.getStringExtra("namaTempat");
+        jarak = intent.getStringExtra("jarak");
 
         reference = FirebaseDatabase.getInstance().getReference("tempat-wisata");
 
@@ -81,6 +82,7 @@ public class DetailWisataActivity extends AppCompatActivity {
                 Intent i = new Intent(DetailWisataActivity.this,MapsActivity.class);
                 i.putExtra("latitude",tempatWisata.getLatitude());
                 i.putExtra("longitude",tempatWisata.getLongitude());
+                i.putExtra("jarak", jarak);
                 startActivity(i);
             }
         });
