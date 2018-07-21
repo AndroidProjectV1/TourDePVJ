@@ -8,6 +8,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.reza.tourdepvjmine.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -43,8 +44,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
+        TextView textView;
+        Intent intent = getIntent();
+        String jarakkm = intent.getStringExtra("jarak");
+        String[] separated = jarakkm.split(",");
+        String jarakmeter = separated[0]+separated[1];
+        String[] jarakmetersplit = jarakmeter.split(" ");
+        Integer jarakestimate = Integer.parseInt(jarakmetersplit[0]);
+        Integer estimation_time = jarakestimate*100/1000;
+        Integer Hours;
+        Integer menit;
+        if (estimation_time>60){
+             Hours = estimation_time/60;
+             menit = estimation_time%60;
+        }else {
+            Hours = 0;
+            menit = estimation_time;
+        }
+        textView = (TextView) findViewById(R.id.Estimation_Time);
+        if (Hours > 0){
+            textView.setText(String.valueOf(Hours+" Jam "+menit+" Menit"));
+        }else {
+            textView.setText(String.valueOf(menit+" Menit"));
+        }
     }
 
 
@@ -59,9 +81,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        /*TextView textView;
+        Intent intent = getIntent();
+        String jarakkm = intent.getStringExtra("jarak");
+        Integer jarak = Integer.parseInt(jarakkm);
+        Integer estimation_time = jarak/100;*/
 
+
+        mMap = googleMap;
         Intent currentloc = getIntent();
+
         Double lat = currentloc.getDoubleExtra("latitude",0.00);
         Double lng = currentloc.getDoubleExtra("longitude",0.00);
         // Add a marker in Sydney and move the camera
